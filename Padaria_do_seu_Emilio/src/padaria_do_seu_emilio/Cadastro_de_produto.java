@@ -15,6 +15,8 @@ import javax.swing.JOptionPane;
  * @author danpg
  */
 public class Cadastro_de_produto extends javax.swing.JFrame {
+    Interface_Padaria intf = new Interface_Padaria();
+    Cadastro_de_produto cad = new Cadastro_de_produto();
     public Cadastro_de_produto() {
         initComponents();
         
@@ -206,13 +208,32 @@ public class Cadastro_de_produto extends javax.swing.JFrame {
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         if(LiberarCadastro()){
             if(jComboBox1.getSelectedIndex()==0){
-                Produtos pao = new Paozin();
+                Paozin pao = new Paozin();
                 pao.setPrice(Float.parseFloat(jTextField1.getText()));
                 pao.setEspecificacao(jTextField2.getText());
                 pao.setVal(Integer.parseInt(Validade.getText()));
-                pao.setTentr(2);
-                
+                pao.setTemtr(2);
+                pao.setSabor(jTextField4.getText());
+                intf.getArrPro().add(pao);
             }
+            if(jComboBox1.getSelectedIndex()==2){
+                Doce docin = new Doce();
+                docin.setPrice(Float.parseFloat(jTextField1.getText()));
+                docin.setEspecificacao(jTextField2.getText());
+                docin.setVal(Integer.parseInt(Validade.getText()));
+                docin.setTemtr(2);
+                docin.setTipo(jTextField3.getText());
+                intf.getArrPro().add(docin);
+            }
+            if(jComboBox1.getSelectedIndex()==1){
+                Frio frio = new Frio();
+                frio.setPrice(Float.parseFloat(jTextField1.getText()));
+                frio.setEspecificacao(jTextField2.getText());
+                frio.setVal(Integer.parseInt(Validade.getText()));
+                frio.setTemtr(2);
+                intf.getArrPro().add(frio);
+            }
+            cad.setVisible(false);
         }
     }//GEN-LAST:event_jButton2ActionPerformed
     /**

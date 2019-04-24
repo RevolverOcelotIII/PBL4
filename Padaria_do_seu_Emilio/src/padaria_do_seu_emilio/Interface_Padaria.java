@@ -122,6 +122,7 @@ public class Interface_Padaria extends javax.swing.JFrame {
         //JOptionPane.showMessageDialog(null, "Dahora mano mas eu n te perguntei nd tlgd?");
         Cadastro_de_produto CP = new Cadastro_de_produto();
         CP.setVisible(true);
+        Interface_Padaria Intf = new Interface_Padaria();
     }//GEN-LAST:event_jButton1MouseClicked
 
     private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed

@@ -5,6 +5,8 @@
  */
 package padaria_do_seu_emilio;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author danpg
@@ -43,8 +45,24 @@ public abstract class Produtos {
         return temtr;
     }
 
-    public void setTentr(double tentr) {
+    public void setTemtr(double temtr) {
         this.temtr = temtr;
+    }
+    
+    public static double valTotal(ArrayList <Produtos> product){
+        double precototal=0;
+        for(Produtos prod: product){
+            precototal+=prod.getPrice();
+        }
+        return precototal;
+    }
+    
+    public static int espTotal(ArrayList <Produtos> product){
+        int esptotal=0;
+        for(Produtos prod: product){
+           esptotal+= prod.getTemtr();
+        }
+        return esptotal;
     }
     
     public abstract double RegTmp(int diaSem);
