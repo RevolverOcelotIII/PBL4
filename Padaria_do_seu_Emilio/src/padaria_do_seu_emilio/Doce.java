@@ -5,6 +5,8 @@
  */
 package padaria_do_seu_emilio;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author danpg
@@ -19,7 +21,15 @@ public class Doce extends Produtos {
     public void setTipo(String tipo) {
         this.tipo = tipo;
     }
-
+    public static int qtdDoc(ArrayList <Produtos> ArrPro){
+        int contdoc=0;
+        for(Produtos doce : ArrPro){
+            if(doce instanceof Doce){
+                contdoc++;
+            }
+        }
+        return contdoc;
+    }
     @Override
     public double RegTmp(int diaSem) {
         if(diaSem==7||diaSem==1){

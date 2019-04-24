@@ -15,11 +15,12 @@ import javax.swing.JOptionPane;
 public class Main {
     
     public static void main(String[] args) {
+        
         ArrayList <Paozin> Arrpao = new ArrayList <>();
         ArrayList <Frio> Arrfri = new ArrayList <>();
         ArrayList <Doce> Arrdoc = new ArrayList <>();
         ArrayList <Produtos> Arrcmp = new ArrayList <>();
-        int option, optionadd,optioncomp = 0,dia;
+        int option, optionadd,optioncomp = 0,dia,qtdDoce,qtdFrio,qtdPao;
         String opt[]={"Adicionar", "Comprar", "Sair"};
         String optadd[]={"Pãozinho","Frio","Doce","Voltar"};
         String optcmp[]={"Pãozinho","Frio","Doce","Finalizar Compras","Voltar"};
@@ -94,6 +95,7 @@ public class Main {
                                 else{
                                     optcomp=JOptionPane.showConfirmDialog(null,"Item "+choicecomp+":\nEspecificação: "+Arrpao.get(choicecomp-1).getEspecificacao()+"\nPreço: "+Arrpao.get(choicecomp-1).getPrice()+"\nValidade: "+Arrpao.get(choicecomp-1).getVal()+" meses\nTempo de entrega: "+Arrpao.get(choicecomp-1).getTemtr()+"\nSabor: "+Arrpao.get(choicecomp-1).getSabor()+"\nDeseja adicionar este item ao carrinho?");
                                     if(optcomp==0){
+                                        JOptionPane.showInputDialog("Insira a quantidade que você deseja");
                                         Arrcmp.add(Arrpao.get(choicecomp-1));
                                     }
                                 }
@@ -137,7 +139,7 @@ public class Main {
                                     JOptionPane.showMessageDialog(null,"Não há produtos no carrinho");
                                     continue;
                                 }
-                        JOptionPane.showMessageDialog(null,"Total de itens: "+Arrcmp.size()+"\nValor total: "+Produtos.valTotal(Arrcmp)+"\nTempo de espera total: "+Produtos.espTotal(Arrcmp)+"");
+                        JOptionPane.showMessageDialog(null,"Total de itens: "+Arrcmp.size()+"\nValor total: "+Produtos.valTotal(Arrcmp)+"\nTempo de espera total: "+Produtos.espTotal(Arrcmp)+"\nQuantidade de Pãozinhos: "+Paozin.qtdPao(Arrcmp)+"\nQuantidade de docinhos: "+Doce.qtdDoc(Arrcmp)+"\nQuantidade de frios: "+Doce.qtdDoc(Arrcmp));
                     }
                         break;
             }

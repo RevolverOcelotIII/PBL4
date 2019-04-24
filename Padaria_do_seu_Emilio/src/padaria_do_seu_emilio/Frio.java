@@ -5,11 +5,24 @@
  */
 package padaria_do_seu_emilio;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author danpg
  */
 public class Frio extends Produtos{
+    
+    public static int qtdFri(ArrayList <Produtos> ArrPro){
+        int contfri=0;
+        for(Produtos frio : ArrPro){
+            if(frio instanceof Frio){
+                contfri++;
+            }
+        }
+        return contfri;
+    }
+    
     @Override
     public double RegTmp(int diaSem) {
         if(diaSem==1){

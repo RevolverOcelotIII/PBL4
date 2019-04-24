@@ -5,6 +5,8 @@
  */
 package padaria_do_seu_emilio;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author danpg
@@ -19,7 +21,15 @@ public class Paozin extends Produtos {
     public void setSabor(String sabor) {
         this.sabor = sabor;
     }
-    
+    public static int qtdPao(ArrayList <Produtos> ArrPro){
+        int contpao=0;
+        for(Produtos pao : ArrPro){
+            if(pao instanceof Paozin){
+                contpao++;
+            }
+        }
+        return contpao;
+    }
     @Override
     public double RegTmp(int diaSem) {
         if(diaSem==7||diaSem==1){
